@@ -2,13 +2,40 @@ export function createResource() {
   return wrapPromise(fetchDogs);
 }
 
+const dogs = [
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://secretldn.com/wp-content/uploads/2020/01/Portraits-of-Dogs-2.jpg",
+  "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313__340.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg",
+  "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/12201051/cute-puppy-body-image.jpg",
+  "https://miro.medium.com/max/1024/0*xc9fvuF4Cwn5yRaH.jpg"
+];
+
 function fetchDogs(numDogs) {
-  console.log("fetch dogs...");
-  return fetch(
-    "https://dogceo.netlify.com/.netlify/functions/pics?count=" + numDogs
-  )
-    .then(x => x.json())
-    .then(y => y.map(x => x.toLowerCase()));
+  return Promise.resolve(dogs.slice(0, numDogs));
 }
 
 function wrapPromise(promise) {
